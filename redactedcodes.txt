@@ -1,0 +1,29 @@
+window.addEventListener('load', function(){
+    document.querySelector(".popup").classList.add("active");
+});
+var window.mpwd
+document.querySelector("#show-popup").addEventListener("click",function(){
+    var mpwd = parseInt(document.getElementById("mpass").value);
+    console.log(mpwd); 
+    if (mpwd == '1234'){
+        document.querySelector(".popup").classList.remove("active");
+    }
+});
+
+
+if (mpwd == '1234'){
+    document.querySelector(".popup").classList.remove("active");
+}
+
+
+<div class="popup">
+            <div class="form">
+                <h2>Login Securely</h2>
+                <div class="elements">
+                    <p>Logged in as: <span style="font-weight: bold;">Admin</span> <span><a href="#">Logout</a></span></p> <br>
+                    <label for="mpass">Please enter your master password:</label>
+                    <input type="password" maxlength="4" id="mpass" placeholder="Master Password"> <br>
+                    <a href="#">Forgot Master Password?</a> <br><a href="#">Contact Customer Service</a> <br>
+                    <button>Unlock</button>
+                </div>
+

@@ -1,0 +1,251 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #e4edf3;
+}
+body{
+    background-color: #020a0f;
+    font-size: large;
+}
+
+.abc{
+    background-image: linear-gradient(
+    to right,
+    #54b3d6,
+    #5b3fcc 50%,
+    #6bbcfd 50%
+    );
+    color: #6bbcfd;
+    background-size: 200% 100%;
+    background-position: -100%;
+    display: inline-block;
+    padding: 5px 0;
+    position: relative;
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    transition: all 0.3s ease-in-out;
+}
+.abc:before{
+    content: '';
+    background: #6bbcfd;
+    display: block;
+    position: absolute;
+    bottom: -3px;
+    left: 0;
+    width: 0;
+    height: 3px;
+    transition: all 0.3s ease-in-out;
+}
+.abc:hover {
+    background-position: 0;
+}
+   
+.abc:hover::before{
+     width: 100%;
+}
+
+
+nav{
+    background-color: #175a83;
+    color: #a6c4d7;
+    font-size: larger;
+    padding: 10px 23px;
+    display: flex;
+    justify-content: space-between;
+    /* height: 35px; */
+}
+
+.logo{
+    margin: 0 23px;
+    font-weight: bold;
+    
+}
+
+nav div a{
+    text-decoration: none;
+    color: #e4edf3;
+    font-size: 23px;
+}
+ul{
+    display: flex;
+    margin: 0 23px;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin: 0 13px;
+    color: #a6c4d7;
+}
+ul li a{
+    text-decoration: none;
+    color: #a6c4d7;
+}
+ul li a:hover{
+    font-weight: bold;
+}
+
+table{
+    border: 2px solid #a6c4d7 !important;
+    width: 40%;
+}
+
+.container{
+    max-width: 80vw;
+    margin: 25px auto;
+}
+
+h1,h2,h3{
+    margin: 22px;
+}
+
+.btn {
+    font-size: 17px;
+    font-weight: bold;
+    margin-top: 10px;
+    width: 220px;
+    height: 50px;
+    border: none;
+    outline: none;
+    color: #d4eafe;
+    background: #30a2e9;
+    cursor: pointer;
+    position: relative;
+    z-index: 0;
+    border-radius: 10px;
+    margin-top: 15px;
+}
+
+.btn:before {
+    content: '';
+    background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+    position: absolute;
+    top: -2px;
+    left:-2px;
+    background-size: 400%;
+    z-index: -1;
+    filter: blur(5px);
+    width: calc(100% + 4px);
+    height: calc(100% + 4px);
+    animation: glowing 20s linear infinite;
+    opacity: 0;
+    transition: opacity .3s ease-in-out;
+    border-radius: 10px;
+}
+
+.btn:active {
+    color: #30a2e9
+}
+
+.btn:active:after {
+    background: transparent;
+}
+
+.btn:hover:before {
+    opacity: 1;
+}
+
+.btn:after {
+    z-index: -1;
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background: #30a2e9;
+    left: 0;
+    top: 0;
+    border-radius: 10px;
+}
+
+@keyframes glowing {
+    0% { background-position: 0 0; }
+    50% { background-position: 400% 0; }
+    100% { background-position: 0 0; }
+}
+
+table, td, tr{
+    border: 1px solid #a6c4d7 !important;
+    border-collapse: collapse;
+    padding: 5px 10px;
+}
+
+img{
+    cursor: pointer;
+}
+
+#alert{
+    display: none;
+}
+
+form table{
+    border: 0 !important;
+}
+form table input{
+    color: #2e258b;
+}
+.popup{
+    opacity: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) scale(1.25);
+    width: 300px;
+    padding: 20px 30px;
+    background: #fff;
+    box-shadow: 2px 2px 5px 5px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+
+    z-index: 1;
+    transition: top 0ms ease-in-out 200ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+.popup.active{
+    top: 50%;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+    transition: top 0ms ease-in-out 0ms,
+                opacity 200ms ease-in-out 0ms,
+                transform 20ms ease-in-out 0ms;
+}
+
+.popup .form h2{
+    text-align: center;
+    margin: 10px 0px 20px;
+    font-size: 25px;
+}
+.popup .form .elements{
+    margin: 15px 0px;
+}
+.popup .form .elements label{
+    font-size: 14px;
+}
+.popup .form .elements input{
+    margin-top: 5px;
+    display: block;
+    width: 100%;
+    padding: 10px;
+    outline: none;
+    border: 1px solid black;
+    border-radius: 5px;
+}
+.popup .form .elements button{
+    width: 100%;
+    height: 40px;
+    outline: none;
+    font-size: 15px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+.popup .form .elements a{
+    font-size: smaller;
+    text-decoration: none;
+    color: #1a79ca;
+    font-weight: 600;
+}
+.popup .form .elements a:hover{
+    text-decoration: underline;
+}

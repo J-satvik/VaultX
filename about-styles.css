@@ -1,0 +1,104 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+
+*{
+    font-family: 'Poppins', sans-serif;
+    padding: 0;
+    margin: 0;
+    color: #e4edf3;
+}
+body{
+    background-color: #020a0f;
+    font-size: large;
+}
+
+nav{
+    background-color: #175a83;
+    color: #a6c4d7;
+    font-size: larger;
+    padding: 10px 23px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.logo{
+    margin: 0 23px;
+    font-weight: bold;
+    
+}
+
+nav div a{
+    text-decoration: none;
+    color: #e4edf3;
+    font-size: 23px;
+}
+ul{
+    display: flex;
+    margin: 0 23px;
+    align-items: center;
+}
+ul li{
+    list-style: none;
+    margin: 0 13px;
+    color: #a6c4d7;
+}
+ul li a{
+    text-decoration: none;
+    color: #a6c4d7;
+}
+ul li a:hover{
+    font-weight: bold;
+}
+
+
+.about p{
+    padding-left: 50px;
+    padding-top: 30px;
+    font-size: larger;
+}
+
+.btn{
+    cursor: pointer;
+    margin-left: 50px;
+    width: 100px;
+    margin-top: 20px;
+    padding: 5px;
+    font-weight: bold;
+    border-radius: 3px;
+    color: black;
+    border-color: #2fa2e9;
+    box-shadow: 0 0 40px 40px #2fa2e9 inset, 0 0 0 0 #2fa2e9;
+    transition: all 150ms ease-in-out;
+  
+  &:hover {
+    box-shadow: 0 0 10px 0 #2fa2e9 inset, 0 0 10px 4px #2fa2e9;
+  }
+
+}
+
+.names{
+    font-size: larger;
+    width: 50%;
+    padding: 10px;
+}
+
+.names span a{
+    align-items: center;
+    padding-left: 50px;
+    margin-left: 50px;
+    cursor: pointer !important;
+}
+.names span{
+    padding: 50px;
+}
+.names .links{
+    padding-left: 50px;
+    
+}
+div .fbk{
+    padding: 50px;
+    margin-top: 15px;
+}
+.names div a{
+    cursor: pointer !important;
+}

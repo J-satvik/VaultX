@@ -1,0 +1,54 @@
+<html>
+    <head>
+        <title>Password Generator</title>
+        <link rel="stylesheet" href="gen-styles.css">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0" />
+    </head>
+    <body>
+        <nav style="margin: 0px;">
+            <div class="logo"><a href="index.html">VaultX</a></div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="generator.html">Generator</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+
+        <div class="container">
+            <h1>Generate a <br> <span> Random Password! </span></h1>
+            <div class="display">
+                <input type="text" id="randPass" placeholder="Password">
+                <img src="copy.png" alt="copy" onclick="copyPass()">
+            </div>
+            <button onclick="createPass()"><img src="generate.svg" alt="generate"> Generate!</button>
+        </div>
+
+        <script>
+            const passBox = document.getElementById("randPass");
+            const len = 16;
+            const lwcse = "abcdefghijklmnopqrstuvwxyz";
+            const upcse = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+            const numb = "0123456789"
+            const symb = "!@#$%^&*_?/"
+            const allChars = upcse + lwcse + numb + symb; 
+
+            function createPass(){
+                let randPass = "";
+                randPass += upcse[Math.floor(Math.random() * upcse.length)];
+                randPass += lwcse[Math.floor(Math.random() * lwcse.length)];
+                randPass += numb[Math.floor(Math.random() * numb.length)];
+                randPass += symb[Math.floor(Math.random() * symb.length)];
+
+                while (len > randPass.length){
+                    randPass += allChars[Math.floor(Math.random()* allChars.length)];
+                }
+                passBox.value = randPass
+            }
+
+            function copyPass(){
+                passBox.select();
+                document.execCommand("copy");
+            }
+        </script>
+    </body>
+</html>
